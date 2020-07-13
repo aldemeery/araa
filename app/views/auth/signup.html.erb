@@ -1,0 +1,37 @@
+<h1>Login</h1>
+
+<% if flash.notice %>
+  <p>
+    <%= flash.notice%>
+  </p>
+<% end %>
+
+<%= form_with(multipart: true, model: @user, url: signup_path) do |form| %>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :full_name %>
+    <%= form.text_field :full_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo %>
+    <%= form.file_field :photo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cover_image %>
+    <%= form.file_field :cover_image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Back', users_path %>
