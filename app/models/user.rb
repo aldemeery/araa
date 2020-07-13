@@ -17,7 +17,9 @@ class User < ApplicationRecord
   # validate :cover_size
 
   def follow(user)
-    followings.create({ followed_id: user.id })
+    exists = followings.where(followed_id: user.id).exists?
+
+    followings.create({ followed_id: user.id }) unless exists
   end
 
   def unfollow(user)

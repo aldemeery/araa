@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   include SessionsHelper
 
-  before_action :set_user, only: %i[show edit update destroy]
+  before_action :set_user, only: %i[show edit update destroy follow unfollow]
   before_action :require_login, except: %w[new create]
   before_action :require_logout, only: %w[new create]
 
@@ -47,6 +47,16 @@ class UsersController < ApplicationController
     logout
 
     redirect_to login_path
+  end
+
+  def follow
+    logged_user.follow(@user)
+    redirect_back fallback_location: root_path
+  end
+
+  def unfollow
+    logged_user.unfollow(@user)
+    redirect_back fallback_location: root_path
   end
 
   private
