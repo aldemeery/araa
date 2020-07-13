@@ -11,3 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add models and migrations.
 - User registration and login.
+- View another user.
+- View own profile.
+- Delete account.
+- Edit profile.
