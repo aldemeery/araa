@@ -1,0 +1,499 @@
+:root {
+  --dark-grey: #213246;
+  --light-grey: #657b90;
+  --dark-cyan: #53a8e9;
+  --light-cyan: #4d9cd7;
+  --icons-cyan: #356f9d;
+  --background-grey: #f5f6f8;
+  --fonts-grey: #acadaf;
+  --fonts-dark: #04152f;
+  --border: #162731;
+  --border-light: #e4e4e4;
+  --white: #fff;
+  --black: #000;
+  --red: #fa3e3e;
+  --heavy-grey: #888;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container-fluid {
+  background-color: var(--white);
+  min-height: 300px;
+  grid-column-gap: 0;
+}
+
+.left-aside {
+  background-color: var(--dark-grey);
+  grid-template-rows: 70px 70px auto;
+  grid-gap: 0;
+}
+
+.right-aside {
+  background-color: var(--background-grey);
+  display: flex;
+  flex-direction: column;
+  max-height: 92.5vh;
+  overflow: scroll;
+}
+
+.right-aside > div {
+  border-bottom: 1px solid var(--border-light);
+  text-align: center;
+  padding: 10px 0;
+}
+
+.user-profile-info {
+  grid-row-gap: 5px;
+}
+
+.user-profile-add {
+  justify-self: end;
+}
+
+.user-profile-menu {
+  justify-self: start;
+}
+
+.user-profile-image img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.user-profile-add,
+.user-profile-menu {
+  align-self: center;
+  border: 1px solid var(--fonts-grey);
+  border-radius: 50%;
+  margin-top: 40px;
+}
+
+.user-profile-image {
+  margin-top: 40px;
+}
+
+.user-profile-add > a,
+.user-profile-menu > a {
+  text-decoration: none;
+  color: var(--fonts-grey);
+  display: inline-block;
+  padding: 10px;
+  width: 38px;
+}
+
+.user-profile-add-icon {
+  width: 16px;
+}
+
+.user-profile-name > h4 {
+  color: var(--dark-grey);
+}
+.user-profile-username {
+  color: var(--light-grey);
+}
+
+.counters {
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  align-items: center;
+}
+
+.counter > a {
+  color: var(--dark-grey);
+  display: inline-block;
+  padding: 0 15px;
+  height: 100%;
+}
+
+.counter:not(:last-child) > a {
+  border-right: 1px solid var(--border-light);
+}
+
+.followers {
+  padding-top: 0 !important;
+}
+
+.followers > h3 {
+  padding: 10px 0;
+}
+
+.followers-items {
+  border-top: 1px solid var(--border-light);
+}
+
+.follower-item {
+  margin: 5px 0;
+}
+
+.follower {
+  display: flex;
+  align-items: center;
+  width: 250px;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+
+.followed {
+  color: var(--background-grey) !important;
+  background-color: var(--light-cyan) !important;
+}
+
+.followed:hover {
+  color: var(--background-grey) !important;
+  background-color: var(--red) !important;
+}
+
+.follower-img > img {
+  height: 60px;
+  border-radius: 50%;
+}
+
+.follower-name {
+  color: var(--light-grey);
+  justify-self: start;
+}
+
+.follower-follow {
+  border: 1px solid;
+  padding: 10px;
+  width: 40px;
+  border-radius: 50%;
+  color: var(--dark-cyan);
+}
+
+.follower-follow:hover {
+  color: var(--background-grey);
+  background-color: var(--light-cyan);
+}
+
+.nav {
+  height: 70px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(
+    to left,
+    var(--light-cyan) 0%,
+    var(--dark-cyan) 100%
+  );
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-link {
+  color: var(--icons-cyan);
+  font-size: 1.3em;
+}
+
+.nav-link:hover {
+  color: var(--background-grey);
+}
+
+.logo {
+  font-size: 1.6em;
+  color: var(--background-grey);
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.no-decor {
+  text-decoration: none;
+}
+
+.main {
+  grid-gap: 0;
+  grid-template-rows: 70px auto;
+}
+
+.page {
+  background-color: var(--background-grey);
+  border-right: 1px solid var(--border-light);
+  overflow: scroll;
+  max-height: 92.5vh;
+}
+
+.page::-webkit-scrollbar,
+.right-aside::-webkit-scrollbar {
+  display: none;
+}
+
+.page,
+.right-aside {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.cover > img {
+  width: 100%;
+}
+
+.content {
+  padding: 30px;
+}
+
+.content-pan {
+  min-height: 100px;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  margin-bottom: 30px;
+}
+
+.pan-heading {
+  text-transform: uppercase;
+  color: var(--heavy-grey);
+  padding: 5px 0;
+  border-bottom: 1px solid var(--heavy-grey);
+  margin-bottom: 20px;
+}
+
+.opinion-input {
+  display: block;
+  min-width: 100%;
+  margin: 0px;
+  min-height: 100px;
+  max-width: 100%;
+  padding: 10px;
+  border: 1px solid var(--heavy-grey);
+  border-radius: 5px;
+  max-height: 100px;
+  margin-bottom: 20px;
+}
+
+.opinion {
+  display: flex;
+  align-items: start;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 10px;
+}
+
+.opinion > .post-img {
+  flex: 0 0 80px;
+}
+
+.opinion > .post-content {
+  flex: 1 0 400px;
+  margin: 0 20px;
+}
+
+.opinion > .post-content > h4 > a {
+  color: var(--dark-cyan);
+}
+
+.opinion > .post-content > p {
+  color: var(--light-grey);
+}
+
+.opinion > .post-time {
+  flex: 0 0 80px;
+  justify-self: end;
+  color: var(--light-grey);
+}
+
+.btn {
+  padding: 10px 5px;
+  cursor: pointer;
+  min-width: 100px;
+  min-height: 30px;
+  border-radius: 25px;
+  border: 1px solid var(--heavy-grey);
+}
+
+.btn-primary {
+  background-color: var(--light-cyan);
+  color: var(--white);
+  font-weight: bold;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--dark-cyan);
+}
+
+.user-link {
+  display: contents;
+  text-decoration: none;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.user-image {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.user-name {
+  color: var(--fonts-grey);
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+
+.follow-info {
+  display: flex;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.following-count,
+.followers-count {
+  text-align: center;
+  flex: 1;
+  align-self: center;
+}
+
+.following-count {
+  border-right: 1px solid var(--border);
+}
+
+.follow-count {
+  color: var(--background-grey);
+}
+
+.follow-count + span {
+  color: var(--light-grey);
+}
+
+.menu-item-link {
+  padding: 15px 10px;
+  color: var(--fonts-grey);
+  text-transform: uppercase;
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+}
+
+.menu-item-link:hover {
+  background-color: var(--light-cyan);
+  color: var(--background-grey);
+}
+
+.active {
+  background-color: var(--light-cyan);
+  color: var(--background-grey);
+}
+
+/* =============== */
+
+.left {
+  min-height: 100vh;
+  background-color: var(--dark-cyan);
+}
+
+.login-form,
+.registration-form {
+  margin: 0 auto;
+  width: 300px;
+  margin-top: 20%;
+}
+
+.login-form > form > input[type="text"],
+.registration-form > form > input[type="text"] {
+  padding: 5px 10px;
+  height: 35px;
+  border-radius: 25px;
+  border: 1px solid var(--dark-cyan);
+}
+
+.registration-form > form > input {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.login-form > form > input[type="text"]::placeholder,
+.registration-form > form > input[type="text"]::placeholder {
+  color: var(--dark-cyan);
+}
+
+.login-form .btn {
+  background-color: var(--white);
+  color: var(--dark-cyan);
+  border: 1px solid var(--dark-cyan);
+}
+
+.login-form .btn:hover {
+  color: var(--white);
+  background-color: var(--dark-cyan);
+  border: 1px solid var(--dark-cyan);
+}
+
+.register-btn {
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+  background-color: var(--dark-cyan) !important;
+  color: var(--white) !important;
+  height: 40px;
+  width: 100%;
+}
+
+.tlogo {
+  display: block !important;
+  width: 128px;
+  margin: auto;
+  color: var(--dark-cyan);
+  font-size: 8em;
+  margin-bottom: 50px;
+}
+
+.file-input {
+  margin-bottom: 15px;
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  transform: translate(-140px, 10px);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+.drop-item:hover {
+  color: var(--white);
+  background-color: var(--dark-cyan);
+}

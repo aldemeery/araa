@@ -1,20 +1,37 @@
-<h1>Login</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <title>Araa</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/aldemeery/griddle@latest/griddle.min.css"
+    />
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="left col-6"></div>
+      <div class="right col-6">
+        <div class="login-form">
+          <i class="fab fa-twitter tlogo"></i>
+          <%= form_with do |form| %>
+            
+            <%= form.text_field :username, placeholder: "Username (e.g. johndoe)" %>
 
-<% if flash.notice %>
-  <p>
-    <%= flash.notice%>
-  </p>
-<% end %>
-
-<%= form_with do |form| %>
-
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-
+            <%= form.submit "Login", class: "btn" %>
+          <% end %>
+          <%= link_to "Sign up", signup_path, class: "btn register-btn no-decor"%>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/5e5550bba8.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
