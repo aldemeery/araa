@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    render 'auth/signup'
+    render 'auth/signup', layout: false
   end
 
   def edit
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       login @user
       redirect_to root_path, notice: 'Successful registration.'
     else
-      redirect_back fallback_location: signup_path, notice: 'Registration failed.'
+      redirect_back fallback_location: signup_path, alert: 'Registration failed.'
     end
   end
 

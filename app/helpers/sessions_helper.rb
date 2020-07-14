@@ -19,7 +19,7 @@ module SessionsHelper
   def require_login
     return if check
 
-    flash.notice = 'Please login.'
+    flash.alert = 'Please login.'
     redirect_to login_path
   end
 

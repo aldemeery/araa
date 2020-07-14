@@ -95,6 +95,7 @@ ul {
 .user-profile-name > h4 {
   color: var(--dark-grey);
 }
+
 .user-profile-username {
   color: var(--light-grey);
 }
@@ -111,6 +112,13 @@ ul {
   display: inline-block;
   padding: 0 15px;
   height: 100%;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
 .counter:not(:last-child) > a {
@@ -181,11 +189,12 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(
-    to left,
-    var(--light-cyan) 0%,
-    var(--dark-cyan) 100%
-  );
+  background:
+    linear-gradient(
+      to left,
+      var(--light-cyan) 0%,
+      var(--dark-cyan) 100%
+    );
 }
 
 .nav-items {
@@ -232,15 +241,15 @@ ul {
   max-height: 92.5vh;
 }
 
-.page::-webkit-scrollbar,
-.right-aside::-webkit-scrollbar {
-  display: none;
-}
-
 .page,
 .right-aside {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.page::-webkit-scrollbar,
+.right-aside::-webkit-scrollbar {
+  display: none;
 }
 
 .cover > img {
@@ -271,7 +280,7 @@ ul {
 .opinion-input {
   display: block;
   min-width: 100%;
-  margin: 0px;
+  margin: 0;
   min-height: 100px;
   max-width: 100%;
   padding: 10px;
@@ -279,6 +288,10 @@ ul {
   border-radius: 5px;
   max-height: 100px;
   margin-bottom: 20px;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
 }
 
 .opinion {
@@ -474,19 +487,8 @@ ul {
   min-width: 160px;
   overflow: auto;
   transform: translate(-140px, 10px);
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {
-  background-color: #ddd;
 }
 
 .show {

@@ -17,3 +17,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Edit profile.
 - Follow users.
 - Unfollow users.
+- Login and Sign up views.
+- Toastr plugin to display notifications.

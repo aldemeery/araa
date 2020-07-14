@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   before_action :require_logout, only: %w[new create]
 
   def new
-    render 'auth/login'
+    render 'auth/login', layout: false
   end
 
   def create
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       login(user)
       redirect_to root_path
     else
-      redirect_back fallback_location: '/', notice: 'User not found'
+      redirect_back fallback_location: '/', alert: 'User not found'
     end
   end
 
