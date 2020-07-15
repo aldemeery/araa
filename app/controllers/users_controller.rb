@@ -5,11 +5,16 @@ class UsersController < ApplicationController
   before_action :require_login, except: %w[new create]
   before_action :require_logout, only: %w[new create]
 
-  def show; end
+  def show
+    @user = User.includes(followers: :follower, followings: :followed).includes(:opinions).find(@user.id)
+  end
 
   def profile
-    @user = logged_user
-    render 'users/show'
+    @user = User.includes(followers: :follower, followings: :followed).includes(:opinions).find(logged_user.id)
+    @suggestions = User.where('id NOT IN (?)', @user.followings.map(&:followed_id) + [@user.id])
+      .limit(10)
+      .order(created_at: :desc)
+    render 'users/profile'
   end
 
   def new

@@ -1,0 +1,36 @@
+<nav class="nav col-12">
+  <a href="/" class="logo">
+    <i class="fab fa-twitter"></i>
+  </a>
+
+  <ul class="nav-items">
+    <li class="nav-item">
+      <a href="#" class="nav-link no-decor">
+        <i class="fas fa-pen"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link no-decor">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link no-decor">
+        <i class="fas fa-search"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        href="#"
+        class="nav-link no-decor"
+        onclick="toggleDropdown(event)"
+      >
+        <i class="fas fa-cog"></i>
+      </a>
+      <div id="myDropdown" class="dropdown-content">
+        <%= link_to 'Home', root_path, class: 'drop-item' %>
+        <%= link_to 'Logout', logout_path, method: :post, class: 'drop-item' %>
+      </div>
+    </li>
+  </ul>
+</nav>

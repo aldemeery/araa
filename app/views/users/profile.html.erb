@@ -1,7 +1,27 @@
 <% content_for :right_aside do %>
-  <%= render 'partials/info_and_followers' %>
+  <%= render 'partials/suggestions' %>
 <% end %>
 
+
+<div class="content-pan">
+  <div class="pan-heading">
+    <h4>Write something</h4>
+  </div>
+  <div class="pan-content">
+    <form action="/">
+      <textarea
+        name="opinion"
+        id="opinion"
+        class="opinion-input"
+        autofocus
+        placeholder="What's hapenning?"
+      ></textarea>
+      <button type="submit" class="btn btn-primary">
+        Post
+      </button>
+    </form>
+  </div>
+</div>
 <div class="content-pan">
   <div class="pan-heading">
     <h4>Latest Opinions</h4>

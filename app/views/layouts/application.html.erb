@@ -15,6 +15,29 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <%= render 'partials/left_aside' %>
+      <main class="main col-10 grid">
+        <%= render 'partials/nav' %>
+        <div class="page col-9">
+          <div class="cover">
+            <img
+              src="<%= asset_url(@user.cover_image_url) %>"
+              alt="Profile picture"
+              class="img-responsive follower-img"
+            />
+          </div>
+          <div class="content">
+            <%= yield %>
+          </div>
+        </div>
+        <%= yield :right_aside %>
+      </main>
+    </div>
+    <%= toastr_flash %>
+    <script
+      src="https://kit.fontawesome.com/5e5550bba8.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

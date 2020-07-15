@@ -17,9 +17,7 @@ class User < ApplicationRecord
   # validate :cover_size
 
   def follow(user)
-    exists = followings.where(followed_id: user.id).exists?
-
-    followings.create({ followed_id: user.id }) unless exists
+    followings.create({ followed_id: user.id }) unless follows?(user)
   end
 
   def unfollow(user)
@@ -28,6 +26,10 @@ class User < ApplicationRecord
 
   def post(content)
     opinions.create({ text: content })
+  end
+
+  def follows?(user)
+    followings.where(followed_id: user.id).exists?
   end
 
   private

@@ -238,7 +238,7 @@ ul {
   background-color: var(--background-grey);
   border-right: 1px solid var(--border-light);
   overflow: scroll;
-  max-height: 92.5vh;
+  height: 92.5vh;
 }
 
 .page,

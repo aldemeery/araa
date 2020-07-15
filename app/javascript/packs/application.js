@@ -15,3 +15,7 @@ toastr = require("toastr")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+toggleDropdown = (e) => {
+  e.preventDefault();
+  document.getElementById("myDropdown").classList.toggle("show");
+}

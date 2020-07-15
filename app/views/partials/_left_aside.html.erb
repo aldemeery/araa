@@ -1,0 +1,58 @@
+<aside class="left-aside col-2 grid">
+  <div class="user col-12">
+    <a href="/" class="user-link">
+      <img
+        src="<%= asset_url(@user.photo_url) %>"
+        alt="Profile picture"
+        class="user-image"
+      />
+      <h5 class="user-name"><%= @user.full_name%></h5>
+    </a>
+  </div>
+  <div class="follow-info col-12">
+    <div class="following-count">
+      <a href="#" class="no-decor">
+        <h3 class="follow-count"><%= @user.followings.count%></h3>
+        <span>Following</span>
+      </a>
+    </div>
+    <div class="followers-count">
+      <a href="#" class="no-decor">
+        <h3 class="follow-count"><%= @user.followers.count%></h3>
+        <span>Followers</span>
+      </a>
+    </div>
+  </div>
+  <ul class="col-12 menu">
+    <li class="menu-item">
+      <a href="/" class="menu-item-link">
+        <i class="fas fa-home"></i>
+        Home
+      </a>
+    </li>
+    <li class="menu-item">
+      <a href="#" class="menu-item-link">
+        <i class="fas fa-at"></i>
+        Connect
+      </a>
+    </li>
+    <li class="menu-item">
+      <a href="#" class="menu-item-link">
+        <i class="fas fa-hashtag"></i>
+        Discover
+      </a>
+    </li>
+    <li class="menu-item">
+      <a href="#" class="menu-item-link">
+        <i class="fas fa-user"></i>
+        Profile
+      </a>
+    </li>
+    <li class="menu-item">
+      <a href="#" class="menu-item-link">
+        <i class="fas fa-chart-pie"></i>
+        Statistics
+      </a>
+    </li>
+  </ul>
+</aside>
