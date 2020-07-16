@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :users, only: ['show', 'destroy']
   get '/users/:id/follow', to: 'users#follow', as: 'follow'
   get '/users/:id/unfollow', to: 'users#unfollow', as: 'unfollow'
+
+  resources :opinions, only: ['create']
 end
