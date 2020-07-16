@@ -20,13 +20,8 @@
       <main class="main col-10 grid">
         <%= render 'partials/nav' %>
         <div class="page col-9">
-          <div class="cover">
-            <img
-              src="<%= asset_url(@user.cover_image_url) %>"
-              alt="Profile picture"
-              class="img-responsive follower-img"
-            />
-          </div>
+          <%= yield :cover %>
+
           <div class="content">
             <%= yield %>
           </div>
