@@ -6,11 +6,13 @@ class UsersController < ApplicationController
   before_action :require_logout, only: %w[new create]
 
   def show
-    @user = User.includes(followers: :follower, followings: :followed).includes(:opinions).find(@user.id)
+    @user = User.includes(followers: :follower, followings: :followed).find(@user.id)
+    @opinions = @user.opinions.order(created_at: :desc)
   end
 
   def profile
-    @user = User.includes(followers: :follower, followings: :followed).includes(:opinions).find(logged_user.id)
+    @user = User.includes(followers: :follower, followings: :followed).find(logged_user.id)
+    @opinions = @user.opinions.order(created_at: :desc)
     @suggestions = User.where('id NOT IN (?)', @user.followings.map(&:followed_id) + [@user.id])
       .limit(10)
       .order(created_at: :desc)

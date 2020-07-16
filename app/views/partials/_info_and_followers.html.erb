@@ -71,14 +71,16 @@
               <h4><%= follower.full_name %></h4>
               <span>@<%= follower.username %></span>
             </a>
-            <% if @logged_user.follows?(follower) %>
-              <a href="<%= unfollow_path follower %>" class="follower-follow no-decor followed">
-                <i class="fa fa-close"></i>
-              </a>
-            <% else %>
-              <a href="<%= follow_path follower %>" class="follower-follow no-decor">
-                <i class="fa fa-plus"></i>
-              </a>
+            <% unless follower == @logged_user %>
+              <% if @logged_user.follows?(follower) %>
+                <a href="<%= unfollow_path follower %>" class="follower-follow no-decor followed">
+                  <i class="fa fa-close"></i>
+                </a>
+              <% else %>
+                <a href="<%= follow_path follower %>" class="follower-follow no-decor">
+                  <i class="fa fa-plus"></i>
+                </a>
+              <% end %>
             <% end %>
           </div>
         </li>

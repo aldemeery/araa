@@ -5,21 +5,6 @@
 
   <ul class="nav-items">
     <li class="nav-item">
-      <a href="#" class="nav-link no-decor">
-        <i class="fas fa-pen"></i>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a href="#" class="nav-link no-decor">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a href="#" class="nav-link no-decor">
-        <i class="fas fa-search"></i>
-      </a>
-    </li>
-    <li class="nav-item">
       <a
         href="#"
         class="nav-link no-decor"
@@ -30,6 +15,7 @@
       <div id="myDropdown" class="dropdown-content">
         <%= link_to 'Home', root_path, class: 'drop-item' %>
         <%= link_to 'Logout', logout_path, method: :post, class: 'drop-item' %>
+        <%= link_to 'Delete Account', user_path(@user), method: :delete, data: {confirm: 'Really delete your account?'}, class: 'drop-item' %>
       </div>
     </li>
   </ul>
