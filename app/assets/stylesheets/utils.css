@@ -1,0 +1,100 @@
+.logo {
+  font-size: 1.6em;
+  color: var(--background-grey);
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.no-decor {
+  text-decoration: none;
+}
+
+.btn {
+  padding: 10px 5px;
+  cursor: pointer;
+  min-width: 100px;
+  min-height: 30px;
+  border-radius: 25px;
+  border: 1px solid var(--heavy-grey);
+}
+
+.btn-primary {
+  background-color: var(--light-cyan);
+  color: var(--white);
+  font-weight: bold;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--dark-cyan);
+}
+
+.user-link {
+  display: contents;
+  text-decoration: none;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.user-image {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.user-name {
+  color: var(--fonts-grey);
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+
+.follow-info {
+  display: flex;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.following-count,
+.followers-count {
+  text-align: center;
+  flex: 1;
+  align-self: center;
+}
+
+.following-count {
+  border-right: 1px solid var(--border);
+}
+
+.follow-count {
+  color: var(--background-grey);
+}
+
+.follow-count + span {
+  color: var(--light-grey);
+}
+
+.menu-item-link {
+  padding: 15px 10px;
+  color: var(--fonts-grey);
+  text-transform: uppercase;
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+}
+
+.menu-item-link:hover {
+  background-color: var(--light-cyan);
+  color: var(--background-grey);
+}
+
+.active {
+  background-color: var(--light-cyan);
+  color: var(--background-grey);
+}

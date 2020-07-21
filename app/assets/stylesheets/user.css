@@ -1,0 +1,51 @@
+
+.user-profile-info {
+  grid-row-gap: 5px;
+}
+
+.user-profile-add {
+  justify-self: end;
+}
+
+.user-profile-menu {
+  justify-self: start;
+}
+
+.user-profile-image img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.user-profile-add,
+.user-profile-menu {
+  align-self: center;
+  border: 1px solid var(--fonts-grey);
+  border-radius: 50%;
+  margin-top: 40px;
+}
+
+.user-profile-image {
+  margin-top: 40px;
+}
+
+.user-profile-add > a,
+.user-profile-menu > a {
+  text-decoration: none;
+  color: var(--fonts-grey);
+  display: inline-block;
+  padding: 10px;
+  width: 38px;
+}
+
+.user-profile-add-icon {
+  width: 16px;
+}
+
+.user-profile-name > h4 {
+  color: var(--dark-grey);
+}
+
+.user-profile-username {
+  color: var(--light-grey);
+}

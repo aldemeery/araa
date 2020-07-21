@@ -1,0 +1,57 @@
+.followers {
+  padding-top: 0 !important;
+}
+
+.followers > h3 {
+  padding: 10px 0;
+}
+
+.followers-items {
+  border-top: 1px solid var(--border-light);
+}
+
+.follower-item {
+  margin: 5px 0;
+}
+
+.follower {
+  display: flex;
+  align-items: center;
+  width: 250px;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+
+.followed {
+  color: var(--background-grey) !important;
+  background-color: var(--light-cyan) !important;
+}
+
+.followed:hover {
+  color: var(--background-grey) !important;
+  background-color: var(--red) !important;
+}
+
+.follower-img > img {
+  height: 60px;
+  border-radius: 50%;
+}
+
+.follower-name {
+  color: var(--light-grey);
+  justify-self: start;
+}
+
+.follower-follow {
+  border: 1px solid;
+  padding: 10px;
+  width: 40px;
+  border-radius: 50%;
+  color: var(--dark-cyan);
+}
+
+.follower-follow:hover {
+  color: var(--background-grey);
+  background-color: var(--light-cyan);
+}
