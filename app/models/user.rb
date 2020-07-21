@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   validates :username, uniqueness: true, presence: true, length: { maximum: 100 }
   validates :full_name, presence: true, length: { maximum: 100 }
+  validates :photo, presence: true
+  validates :cover_image, presence: true
   # validate :photo_size
   # validate :cover_size
 
