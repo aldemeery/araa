@@ -43,6 +43,7 @@ Clone the repository to your machine and cd into the directory
 ```
 $ git clone https://github.com/aldemeery/araa.git
 $ cd araa
+$ rails db:migrate
 ```
 
 Use the following command to start the rails server then visit: http://localhost:3000 to use the app
@@ -54,7 +55,8 @@ $ rails s
 Run RSpec tests
 
 ```
-$ rspec
+$ rails db:migrate RAILS_ENV=test
+$ bundle exec rspec
 ```
 
 ## N+1 Problem
