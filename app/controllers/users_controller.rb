@@ -7,12 +7,21 @@ class UsersController < ApplicationController
 
   def show
     @user = User.includes(followers: :follower, followings: :followed).find(@user.id)
-    @opinions = @user.opinions.order(created_at: :desc)
+    @opinions = Opinion.where('user_id in (?)', (
+      @user.followers_ids + @user.followings_ids + [@user.id]
+    ).uniq)
+      .includes(:user)
+      .order(created_at: :desc)
   end
 
   def profile
+    console
     @user = User.includes(followers: :follower, followings: :followed).find(logged_user.id)
-    @opinions = @user.opinions.order(created_at: :desc)
+    @opinions = Opinion.where('user_id in (?)', (
+        @user.followers_ids + @user.followings_ids + [@user.id]
+      ).uniq)
+      .includes(:user)
+      .order(created_at: :desc)
     @suggestions = User.where('id NOT IN (?)', @user.followings.map(&:followed_id) + [@user.id])
       .limit(10)
       .order(created_at: :desc)

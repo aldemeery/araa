@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Users view.
 - Delete account.
 - Post opinions.
+- List other people opinions in the homepage.
 
 ### Removed
 

@@ -34,6 +34,14 @@ class User < ApplicationRecord
     followings.where(followed_id: user.id).exists?
   end
 
+  def followers_ids
+    followers.select('follower_id').pluck('follower_id').to_a
+  end
+
+  def followings_ids
+    followings.select('followed_id').pluck('followed_id').to_a
+  end
+
   private
 
   def destroy_relations

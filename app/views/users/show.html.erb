@@ -15,15 +15,15 @@
       <div class="opinion">
         <div class="post-img">
           <img
-            src="<%= asset_url(@user.photo_url) %>"
+            src="<%= asset_url(opinion.user.photo_url) %>"
             alt="Profile picture"
             class="img-responsive follower-img"
           />
         </div>
         <div class="post-content">
           <h4>
-            <a href="<%= user_path @user %>" class="no-decor">
-              <%= @user.full_name %>
+            <a href="<%= user_path opinion.user %>" class="no-decor">
+              <%= opinion.user.full_name %>
             </a>
           </h4>
           <p>
