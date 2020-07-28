@@ -15,7 +15,6 @@ class UsersController < ApplicationController
   end
 
   def profile
-    console
     @user = User.includes(followers: :follower, followings: :followed).find(logged_user.id)
     @opinions = Opinion.where('user_id in (?)', (
         @user.followers_ids + @user.followings_ids + [@user.id]

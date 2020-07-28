@@ -1,11 +1,7 @@
 <aside class="right-aside col-3">
   <div class="grid user-profile-info">
     <div class="user-profile-add col-4">
-      <% if @user != @logged_user %>
-        <%= link_to(following_action_path @user) do %>
-          <i class="fa <%= action_icon @user %>"></i>
-        <% end %>
-      <% end %>
+      <%= action(@user) %>
     </div>
     <div class="user-profile-image col-4">
       <a href="#">
@@ -16,11 +12,9 @@
       </a>
     </div>
     <div class="user-profile-menu col-4">
-      <% if @user != @logged_user %>
-        <a href="#">
-          <i class="fa fa-list-ul"></i>
-        </a>
-      <% end %>
+      <a href="#">
+        <i class="fa fa-list-ul"></i>
+      </a>
     </div>
     <div class="user-profile-name col-12">
       <h4><%= @user.full_name %></h4>
@@ -65,11 +59,7 @@
               <h4><%= follower.full_name %></h4>
               <span>@<%= follower.username %></span>
             </a>
-            <% unless follower == @logged_user %>
-              <a href="<%= following_action_path follower %>" class="follower-follow no-decor <%= followed(follower) %>">
-                <i class="fa <%= action_icon follower%>"></i>
-              </a>
-            <% end %>
+            <%= follow_action(follower) %>
           </div>
         </li>
       <% end %>
