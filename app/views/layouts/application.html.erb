@@ -1,15 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Araa</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <title>Araa</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/aldemeery/griddle@latest/griddle.min.css"
+    />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <%= render 'partials/left_aside' %>
+      <main class="main col-10 grid">
+        <%= render 'partials/nav' %>
+        <div class="page col-9">
+          <%= yield :cover %>
+
+          <div class="content">
+            <%= yield %>
+          </div>
+        </div>
+        <%= yield :right_aside %>
+      </main>
+    </div>
+    <%= toastr_flash %>
+    <script
+      src="https://kit.fontawesome.com/5e5550bba8.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

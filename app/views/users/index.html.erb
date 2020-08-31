@@ -18,8 +18,8 @@
       <tr>
         <td><%= user.full_name %></td>
         <td><%= user.username %></td>
-        <td><%= user.photo %></td>
-        <td><%= user.cover_image %></td>
+        <td><%= user.photo.url %></td>
+        <td><%= user.cover_image.url %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

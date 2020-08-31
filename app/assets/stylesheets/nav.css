@@ -1,0 +1,30 @@
+.nav {
+  height: 70px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background:
+    linear-gradient(
+      to left,
+      var(--light-cyan) 0%,
+      var(--dark-cyan) 100%
+    );
+}
+
+.nav-items {
+  display: flex;
+  justify-content: flex-end;
+  width: 200px;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-link {
+  color: var(--icons-cyan);
+  font-size: 1.3em;
+}
+
+.nav-link:hover {
+  color: var(--background-grey);
+}

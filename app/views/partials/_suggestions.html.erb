@@ -1,0 +1,27 @@
+<aside class="right-aside col-3">
+  <div class="followers">
+    <h3>Who to Follow</h3>
+    <ul class="followers-items">
+      <% @suggestions.each do |follower| %>
+        <li class="li follower-item">
+          <div class="follower">
+            <a href="#" class="follower-img no-decor">
+              <img
+                src="<%= asset_url(follower.photo_url) %>"
+                alt="Profile picture"
+                class="img-responsive follower-img"
+              />
+            </a>
+            <a href="<%= user_path follower %>" class="follower-name no-decor">
+              <h4><%= follower.full_name %></h4>
+              <span>@<%= follower.username %></span>
+            </a>
+            <a href="<%= following_action_path follower %>" class="follower-follow no-decor <%= followed follower %>">
+              <i class="fa <%= action_icon follower %>"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</aside>

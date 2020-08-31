@@ -1,0 +1,30 @@
+.opinion {
+  display: flex;
+  align-items: start;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 10px;
+}
+
+.opinion > .post-img {
+  flex: 0 0 80px;
+}
+
+.opinion > .post-content {
+  flex: 1 0 400px;
+  margin: 0 20px;
+}
+
+.opinion > .post-content > h4 > a {
+  color: var(--dark-cyan);
+}
+
+.opinion > .post-content > p {
+  color: var(--light-grey);
+}
+
+.opinion > .post-time {
+  flex: 0 0 80px;
+  justify-self: end;
+  color: var(--light-grey);
+}

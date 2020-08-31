@@ -1,11 +1,19 @@
 <% content_for :right_aside do %>
-  <%= render 'partials/info_and_followers' %>
+  <%= render 'partials/suggestions' %>
 <% end %>
 
-<% content_for :cover do %>
-  <%= render 'partials/cover' %>
-<% end %>
 
+<div class="content-pan">
+  <div class="pan-heading">
+    <h4>Write something</h4>
+  </div>
+  <div class="pan-content">
+    <%= form_with(url: opinions_path) do |form| %>
+        <%= form.text_area 'opinion[text]', placeholder: "What are you tinking of?", autofocus: true, class: 'opinion-input' %>
+        <%= form.submit "Post", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
 <div class="content-pan">
   <div class="pan-heading">
     <h4>Latest Opinions</h4>
