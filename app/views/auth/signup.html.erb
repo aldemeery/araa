@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <title>Araa</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/aldemeery/griddle@latest/griddle.min.css"
+    />
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="left col-6"></div>
+      <div class="right col-6">
+        <div class="registration-form">
+          <i class="fab fa-twitter tlogo"></i>
+          <%= form_with(multipart: true, model: @user, url: signup_path) do |form| %>
+            <%= form.text_field :full_name, placeholder: "Full name (e.g. John Doe)" %>
+            
+            <%= form.text_field :username, placeholder: "Username (e.g. johndoe)" %>
+
+            <%= form.label :cover_image, "Cover Image (1200 x 360)" %>
+            <%= form.file_field :cover_image %>
+
+            <%= form.label :photo, "Photo (300 x 300)" %>
+            <%= form.file_field :photo, class: "file-input" %>
+            
+            <%= form.submit "Sign up", class: "btn register-btn no-decor" %>
+          <% end %>
+          <%= link_to "Login", login_path, class: "btn register-btn no-decor"%>
+        </div>
+      </div>
+    </div>
+    <%= toastr_flash %>
+    <script
+      src="https://kit.fontawesome.com/5e5550bba8.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

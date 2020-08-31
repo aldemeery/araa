@@ -1,0 +1,45 @@
+<% content_for :right_aside do %>
+  <%= render 'partials/suggestions' %>
+<% end %>
+
+
+<div class="content-pan">
+  <div class="pan-heading">
+    <h4>Write something</h4>
+  </div>
+  <div class="pan-content">
+    <%= form_with(url: opinions_path) do |form| %>
+        <%= form.text_area 'opinion[text]', placeholder: "What are you tinking of?", autofocus: true, class: 'opinion-input' %>
+        <%= form.submit "Post", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<div class="content-pan">
+  <div class="pan-heading">
+    <h4>Latest Opinions</h4>
+  </div>
+  <div class="pan-content">
+    <% @opinions.each do |opinion| %>
+      <div class="opinion">
+        <div class="post-img">
+          <img
+            src="<%= asset_url(opinion.user.photo_url) %>"
+            alt="Profile picture"
+            class="img-responsive follower-img"
+          />
+        </div>
+        <div class="post-content">
+          <h4>
+            <a href="<%= user_path opinion.user %>" class="no-decor">
+              <%= opinion.user.full_name %>
+            </a>
+          </h4>
+          <p>
+            <%= opinion.text %>
+          </p>
+        </div>
+        <div class="post-time"><%= distance_of_time_in_words(Time.now, opinion.created_at) %> ago</div>
+      </div>
+    <% end %>
+  </div>
+</div>
